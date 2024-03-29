@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Pizzas</title>
+</head>
+<body>
+<form>
+<table>
+  <tr th:each="currentPizza : ${pizza}" >
+  	<td th:text="'Pizza: ' + ${currentPizza.id}"></td>
+    <td th:text="'Pizza Size: ' + ${currentPizza.size}"></td>
+    <td th:text="'Stuffed Crust: ' + ${currentPizza.stuffedCrust}"></td>
+    <td th:text="'Toppings: ' + ${currentPizza.toppings}"></td>
+    <td th:text="'Price: ' + ${currentPizza.calculatePrice()}"></td>
+	<td><a th:href="@{/edit/{id}(id=${currentPizza.id})}">Edit</a></td>
+  	<td><a th:href="@{/delete/{id}(id=${currentPizza.id})}">Delete</a></td>
+  </tr>
+</table>
+</form>
+<a href="../inputPizza">Add a new Pizza</a>
+</body>
+</html>

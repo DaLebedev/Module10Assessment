@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Pizza</title>
+</head>
+<body>
+<form th:object="${newPizza}" th:action="@{/update/{id}(id=${newPizza.id})}" method=POST>
+	Size:
+	<input type="radio" name="size" th:field="*{size}" value="S"> Small
+    <input type="radio" name="size" th:field="*{size}" value="M"> Medium
+    <input type="radio" name="size" th:field="*{size}" value="L"> Large
+	<br>
+	Stuffed Crust: 
+	<input type="radio" name="stuffedCrust" th:field="*{stuffedCrust}" value="true"> Yes
+    <input type="radio" name="stuffedCrust" th:field="*{stuffedCrust}" value="false"> No
+	<br>
+	Pepperoni: 
+	<input type="radio" name="toppings.pepperoni" th:field="*{toppings.pepperoni}" value="true"> Yes
+    <input type="radio" name="toppings.pepperoni" th:field="*{toppings.pepperoni}" value="false"> No	
+    <br>
+	Sausage: 
+	<input type="radio" name="toppings.sausage" th:field="*{toppings.sausage}" value="true"> Yes
+    <input type="radio" name="toppings.sausage" th:field="*{toppings.sausage}" value="false"> No
+	<br>
+	Mushrooms: 
+	<input type="radio" name="toppings.mushrooms" th:field="*{toppings.mushrooms}" value="true"> Yes
+    <input type="radio" name="toppings.mushrooms" th:field="*{toppings.mushrooms}" value="false"> No
+	<br>
+	Olives: 
+	<input type="radio" name="toppings.olives" th:field="*{toppings.olives}" value="true"> Yes
+    <input type="radio" name="toppings.olives" th:field="*{toppings.olives}" value="false"> No	
+    <br>
+	Green Peppers:
+	<input type="radio" name="toppings.greenPeppers" th:field="*{toppings.greenPeppers}" value="true"> Yes
+    <input type="radio" name="toppings.greenPeppers" th:field="*{toppings.greenPeppers}" value="false"> No	
+    <br>
+	Pineapple: 
+	<input type="radio" name="toppings.pineapple" th:field="*{toppings.pineapple}" value="true"> Yes
+    <input type="radio" name="toppings.pineapple" th:field="*{toppings.pineapple}" value="false"> No	
+    <br>
+
+	<input name="submit" type="submit" value="submit" />
+	<br>
+	<a th:href="@{/viewAll}">View all Pizzas</a>
+</form>
+</body>
+</html>
